@@ -1,4 +1,0 @@
-config SHIELD_SEAGULL
-    bool "Seagull Macropad"
-    select ZMK_KSCAN_GPIO
-    select ZMK_ENCODER
