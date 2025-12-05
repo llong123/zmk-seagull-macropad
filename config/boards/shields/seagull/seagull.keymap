@@ -1,0 +1,14 @@
+/ {
+    keymap {
+        layers = <
+            &kp A &kp A &kp A &kp A
+            &kp A &kp A &kp A &kp A
+            &kp A &kp A &kp A &kp A
+            &kp A &kp A &kp A &kp A
+        >;
+    };
+};
+
+&encoder0 {
+    bindings = <&inc_dec>;
+};

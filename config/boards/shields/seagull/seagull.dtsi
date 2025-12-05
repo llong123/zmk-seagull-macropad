@@ -1,0 +1,38 @@
+/ {
+    compatible = "zmk,keyboard";
+    keymap {
+        compatible = "zmk,keymap":
+
+        default_layer{
+            bindings = <
+                &kp A &kp A &kp A &kp A
+                &kp A &kp A &kp A &kp A
+                &kp A &kp A &kp A &kp A
+                &kp A &kp A &kp A &kp A
+            >;
+        };
+    };
+};
+
+/* Matrix scanning */
+&kscan {
+    col-gpios = <&gpio0 9  GPIO_ACTIVE_LOW>,
+                <&gpio0 10 GPIO_ACTIVE_LOW>,
+                <&gpio1 11 GPIO_ACTIVE_LOW>,
+                <&gpio1 13 GPIO_ACTIVE_LOW>;
+
+    row-gpios = <&gpio0 31 GPIO_ACTIVE_LOW>,
+                <&gpio0 29 GPIO_ACTIVE_LOW>,
+                <&gpio0 2  GPIO_ACTIVE_LOW>,
+                <&gpio1 15 GPIO_ACTIVE_LOW>;
+
+    diode-direction = "col2row";
+};
+
+/* Encoder */
+encoder0: encoder0 {
+    compatible = "zmk,encoder";
+    a-gpios = <&gpio1 6 GPIO_ACTIVE_LOW>;
+    b-gpios = <&gpio1 4 GPIO_ACTIVE_LOW>;
+    steps = <4>;
+}
